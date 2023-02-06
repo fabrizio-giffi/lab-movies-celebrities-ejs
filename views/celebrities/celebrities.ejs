@@ -1,0 +1,9 @@
+<h2>All the celebrities in the DB:</h2>
+<hr>
+<% if (!allCelebs.length) { %>
+ <h3>There is nothing in the DB :(</h3>
+<% } %>
+<% allCelebs.forEach(celeb => { %>
+    <h4> <%= celeb.name %>  </h4>
+    <hr>
+<% }) %>

@@ -1,0 +1,9 @@
+<h2>All the Movies in the DB:</h2>
+<hr>
+<% if (!allMovies.length) { %>
+ <h3>There is nothing in the DB :(</h3>
+<% } %>
+<% allMovies.forEach(movie => { %>
+    <h4><a href="/movies/<%- movie._id %> "><%= movie.title %></a></h4>
+    <hr>
+<% }) %>

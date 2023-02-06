@@ -1,0 +1,18 @@
+<h2>Create a new Celebrity</h2>
+<form class="d-flex flex-column" method="POST" action="/celebrities/create">
+    <label>Name:
+        <input type="text" name="name" placeholder="First and Last name of the celebrity">
+    </label>
+    <label>Occupation:
+        <select name="occupation">
+            <option value="actor">Actor</option>
+            <option value="singer">Singer</option>
+            <option value="comedian">Comedian</option>
+            <option value="unknown">Unknown</option>
+        </select>
+    </label>
+    <label>Catchphrase:
+        <input type="text" name="catchPhrase">
+    </label>
+    <button class="btn btn-primary" type="submit">Create!</button>
+</form>
