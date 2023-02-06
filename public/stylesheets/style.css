@@ -4,5 +4,37 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+}
+
+a.movie-title {
+  color: black;
+}
+
+a:hover {
+  color: coral;
+  text-decoration: none;
+}
+
+strong {
+  color: coral;
+  text-transform: uppercase;
+}
+
+.main-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+span {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+h4 {
+  text-transform: capitalize;
 }

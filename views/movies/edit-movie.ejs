@@ -1,23 +1,49 @@
-<h2>Edit an existing Movie</h2>
-<form class="d-flex flex-column" method="POST" action="/movies/<%- movieFound._id %>/edit">
-    <label>Title:
-        <input type="text" name="title" value="<%= movieFound.title %>">
-    </label>
-    <label>Genre:
-        <input type="text" name="genre" value="<%= movieFound.genre %>">
-    </label>
-    <label>Plot:
-        <input type="text" name="plot" value="<%= movieFound.plot %>">
-    </label>
-    <label>Cast:
-        <select name="cast" multiple>
-            <% allCelebs.forEach(celeb => { %>
-             <option value="<%= [celeb._id] %>" 
-                <% if (movieFound.cast.some(actor => actor.name === celeb.name)) { %>
-                selected<% } %>>
-                <%= celeb.name %></option>
-            <% }) %>
-        </select>
-    </label>
-    <button class="btn btn-primary" type="submit">Edit!</button>
-</form>
+<div class="container d-flex flex-column align-items-center">
+  <h2 class="main-header">Edit an existing Movie</h2>
+  <form
+    class="w-50 d-flex flex-column"
+    method="POST"
+    action="/movies/<%- movieFound._id %>/edit"
+  >
+    <div class="form-group">
+      <label for="movie-title">Title:</label>
+      <input
+        class="form-control"
+        id="movie-title"
+        type="text"
+        name="title"
+        value="<%= movieFound.title %>"
+      />
+    </div>
+    <div class="form-group">
+      <label for="movie-genre">Genre:</label>
+      <input
+        class="form-control"
+        id="movie-genre"
+        type="text"
+        name="genre"
+        value="<%= movieFound.genre %>"
+      />
+    </div>
+    <div class="form-group">
+      <label for="movie-plot">Plot:</label>
+      <input
+        class="form-control"
+        id="movie-plot"
+        type="text"
+        name="plot"
+        value="<%= movieFound.plot %>"
+      />
+    </div>
+    <div class="form-group">
+      <label for="movie-cast">Cast:</label>
+      <select class="form-control" id="movie-cast" name="cast" multiple>
+        <% allCelebs.forEach(celeb => { %> 
+        <option value="<%= [celeb._id] %>" <%
+        if (movieFound.cast.some(actor => actor.name === celeb.name)) 
+        { %> selected <% } %> > <%= celeb.name %></option><% }) %>
+      </select>
+    </div>
+    <button class="btn btn-dark" type="submit">Edit!</button>
+  </form>
+</div>
