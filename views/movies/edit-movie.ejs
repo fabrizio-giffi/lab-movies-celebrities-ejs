@@ -1,0 +1,23 @@
+<h2>Edit an existing Movie</h2>
+<form class="d-flex flex-column" method="POST" action="/movies/<%- movieFound._id %>/edit">
+    <label>Title:
+        <input type="text" name="title" value="<%= movieFound.title %>">
+    </label>
+    <label>Genre:
+        <input type="text" name="genre" value="<%= movieFound.genre %>">
+    </label>
+    <label>Plot:
+        <input type="text" name="plot" value="<%= movieFound.plot %>">
+    </label>
+    <label>Cast:
+        <select name="cast" multiple>
+            <% allCelebs.forEach(celeb => { %>
+             <option value="<%= [celeb._id] %>" 
+                <% if (movieFound.cast.some(actor => actor.name === celeb.name)) { %>
+                selected<% } %>>
+                <%= celeb.name %></option>
+            <% }) %>
+        </select>
+    </label>
+    <button class="btn btn-primary" type="submit">Edit!</button>
+</form>
